@@ -20,7 +20,7 @@ Project pages:
     - Touchless palmprint and finger texture recognition: A Deep Learning fusion approach: http://iebil.di.unimi.it/fusionnet/index.htm
     
 Outline:
-![Outline](http://iebil.di.unimi.it/palmnet/imgs/outline_segm.jpg =250x250)
+![Outline](http://iebil.di.unimi.it/palmnet/imgs/outline_segm_small.jpg)
 
 Citation:
 
