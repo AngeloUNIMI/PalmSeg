@@ -16,11 +16,13 @@ Matlab source code for palmprint segmentation used in the papers:
 	
 Project pages:
 
-    - PalmNet: Gabor-PCA Convolutional Networks for Touchless Palmprint Recognition: http://iebil.di.unimi.it/palmnet/index.htm
-    - Touchless palmprint and finger texture recognition: A Deep Learning fusion approach: http://iebil.di.unimi.it/fusionnet/index.htm
+    - PalmNet: Gabor-PCA Convolutional Networks for Touchless Palmprint Recognition: 
+    http://iebil.di.unimi.it/palmnet/index.htm
+    - Touchless palmprint and finger texture recognition: A Deep Learning fusion approach: 
+    http://iebil.di.unimi.it/fusionnet/index.htm
     
 Outline:
-![Outline](http://iebil.di.unimi.it/palmnet/imgs/outline_segm_small.jpg)
+![Outline](http://iebil.di.unimi.it/palmnet/imgs/outline_segm_small.jpg "Outline")
 
 Citation:
 
