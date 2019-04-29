@@ -1,4 +1,4 @@
-# PalmNet
+# Palmprint Segmentation
 
 Matlab source code for palmprint segmentation used in the papers:
 
