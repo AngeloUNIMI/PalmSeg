@@ -2,11 +2,11 @@
 
 Matlab source code for palmprint segmentation used in the papers:
 
-	A. Genovese, V. Piuri, K. N. Plataniotis, and F. Scotti,
-	"PalmNet: Gabor-PCA Convolutional Networks for Touchless Palmprint Recognition",
-	IEEE Transactions on Information Forensics and Security, 2019.
-	DOI: 10.1109/TIFS.2019.2911165
-	https://ieeexplore.ieee.org/document/8691498
+    A. Genovese, V. Piuri, K. N. Plataniotis, and F. Scotti,
+    "PalmNet: Gabor-PCA Convolutional Networks for Touchless Palmprint Recognition",
+    IEEE Transactions on Information Forensics and Security, 2019.
+    DOI: 10.1109/TIFS.2019.2911165
+    https://ieeexplore.ieee.org/document/8691498
     
     A. Genovese, V. Piuri, F. Scotti, and S. Vishwakarma, 
     "Touchless palmprint and finger texture recognition: A Deep Learning fusion approach", 
@@ -16,11 +16,11 @@ Matlab source code for palmprint segmentation used in the papers:
 	
 Project pages:
 
-	- PalmNet: Gabor-PCA Convolutional Networks for Touchless Palmprint Recognition: http://iebil.di.unimi.it/palmnet/index.htm
+    - PalmNet: Gabor-PCA Convolutional Networks for Touchless Palmprint Recognition: http://iebil.di.unimi.it/palmnet/index.htm
     - Touchless palmprint and finger texture recognition: A Deep Learning fusion approach: http://iebil.di.unimi.it/fusionnet/index.htm
     
 Outline:
-![Outline](http://iebil.di.unimi.it/palmnet/imgs/outline_segm.jpg "Outline")
+![Outline](http://iebil.di.unimi.it/palmnet/imgs/outline_segm.jpg | width=100 "Outline")
 
 Citation:
 
@@ -34,7 +34,7 @@ Citation:
    
     @InProceedings {civemsa19,
         author = {A. Genovese and V. Piuri and F. Scotti and S. Vishwakarma},
-        booktitle = {Proc. of the 2019 IEEE Int. Conf. on Computational Intelligence & Virtual Environments for Measurement Systems and Applications (CIVEMSA 2019)},
+        booktitle = {Proc. of the 2019 IEEE Int. Conf. on Computational Intelligence & Virtual Environments for Measurement Systems and 	Applications (CIVEMSA 2019)},
         title = {Touchless palmprint and finger texture recognition: A Deep Learning fusion approach},
         address = {Tianjin, China},
         month = {June},
@@ -58,7 +58,7 @@ Required files:
 
 Part of the code is based on the papers:
 
-	- O. Bingol and M. Ekinci, 
+    - O. Bingol and M. Ekinci, 
     “Stereo-based palmprint recognition in various 3D postures,” 
     Expert Syst. Appl., vol. 78, pp. 74–88, 2017.
     https://www.sciencedirect.com/science/article/pii/S0957417417300350
@@ -80,12 +80,12 @@ Part of the code is based on the papers:
     
 The databases used in the papers can be obtained at:
 
-	- CASIA:
-	  http://www.cbsr.ia.ac.cn/english/Palmprint%20Databases.asp
-	- IITD:
-	  http://www4.comp.polyu.edu.hk/~csajaykr/IITD/Database_Palm.htm
-	- REST:
-	  http://www.regim.org/publications/databases/regim-sfax-tunisian-hand-database2016-rest2016/
-	- Tongji:
-	  http://sse.tongji.edu.cn/linzhang/cr3dpalm/cr3dpalm.htm
+    - CASIA:
+    http://www.cbsr.ia.ac.cn/english/Palmprint%20Databases.asp
+    - IITD:
+    http://www4.comp.polyu.edu.hk/~csajaykr/IITD/Database_Palm.htm
+    - REST:
+    http://www.regim.org/publications/databases/regim-sfax-tunisian-hand-database2016-rest2016/
+    - Tongji:
+    http://sse.tongji.edu.cn/linzhang/cr3dpalm/cr3dpalm.htm
 	
