@@ -83,11 +83,11 @@ Part of the code is based on the papers:
 The databases used in the papers can be obtained at:
 
     - CASIA:
-    http://www.cbsr.ia.ac.cn/english/Palmprint%20Databases.asp
+      http://www.cbsr.ia.ac.cn/english/Palmprint%20Databases.asp
     - IITD:
-    http://www4.comp.polyu.edu.hk/~csajaykr/IITD/Database_Palm.htm
+      http://www4.comp.polyu.edu.hk/~csajaykr/IITD/Database_Palm.htm
     - REST:
-    http://www.regim.org/publications/databases/regim-sfax-tunisian-hand-database2016-rest2016/
+      http://www.regim.org/publications/databases/regim-sfax-tunisian-hand-database2016-rest2016/
     - Tongji:
-    http://sse.tongji.edu.cn/linzhang/cr3dpalm/cr3dpalm.htm
+      http://sse.tongji.edu.cn/linzhang/cr3dpalm/cr3dpalm.htm
 	
