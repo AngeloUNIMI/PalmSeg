@@ -6,12 +6,17 @@ Matlab source code for palmprint segmentation used in the papers:
 	"PalmNet: Gabor-PCA Convolutional Networks for Touchless Palmprint Recognition",
 	IEEE Transactions on Information Forensics and Security, 2019.
 	DOI: 10.1109/TIFS.2019.2911165
-	https://ieeexplore.ieee.org/document/8691498
 
 	A. Genovese, V. Piuri, F. Scotti, and S. Vishwakarma,
 	"Touchless palmprint and finger texture recognition: A Deep Learning fusion approach",
 	2019 IEEE Int. Conf. on Computational Intelligence & Virtual Environments for Measurement Systems and Applications (CIVEMSA 2019),
 	Tianjin, China, June 14-16, 2019
+	
+Papers:
+
+https://ieeexplore.ieee.org/document/8691498
+
+https://ieeexplore.ieee.org/document/9071620
 	
 Project pages:
 
