@@ -1,93 +1,261 @@
-# Palmprint Segmentation
+<div align="center">
 
-Matlab source code for palmprint segmentation used in the papers:
+# ✋ PalmSeg
 
-    A. Genovese, V. Piuri, K. N. Plataniotis, and F. Scotti,
-    "PalmNet: Gabor-PCA Convolutional Networks for Touchless Palmprint Recognition",
-    IEEE Transactions on Information Forensics and Security, 2019.
-    DOI: 10.1109/TIFS.2019.2911165
-    https://ieeexplore.ieee.org/document/8691498
-    
-    A. Genovese, V. Piuri, F. Scotti, and S. Vishwakarma, 
-    "Touchless palmprint and finger texture recognition: A Deep Learning fusion approach", 
-    2019 IEEE Int. Conf. on Computational Intelligence & Virtual Environments 
-    for Measurement Systems and Applications (CIVEMSA 2019),
-    Tianjin, China, June 14-16, 2019
-	
-Project pages:
+### Palmprint Segmentation and ROI Extraction for Touchless Biometrics
 
-    - PalmNet: Gabor-PCA Convolutional Networks for Touchless Palmprint Recognition: 
-    http://iebil.di.unimi.it/palmnet/index.htm
-    - Touchless palmprint and finger texture recognition: A Deep Learning fusion approach: 
-    http://iebil.di.unimi.it/fusionnet/index.htm
-    
-Outline:
-![Outline](./images/outlineSeg.jpg "Outline")
+[![MATLAB](https://img.shields.io/badge/MATLAB-R2018%2B-orange?logo=mathworks)](https://www.mathworks.com/products/matlab.html)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
+[![Repository](https://img.shields.io/badge/GitHub-AngeloUNIMI%2FPalmSeg-181717?logo=github)](https://github.com/AngeloUNIMI/PalmSeg)
+[![Topic](https://img.shields.io/badge/Topic-Palmprint%20Segmentation-green)](https://github.com/AngeloUNIMI/PalmSeg)
 
-Citation:
+**MATLAB source code for palmprint segmentation and region-of-interest extraction**  
+Used in the IEEE TIFS 2019 and IEEE CIVEMSA 2019 palmprint recognition works.
 
-    @Article{tifs19,
-        author = {A. Genovese and V. Piuri and K. N. Plataniotis and F. Scotti},
-        title = {PalmNet: Gabor-PCA Convolutional Networks for Touchless Palmprint Recognition},
-        journal = {IEEE Transactions on Information Forensics and Security},
-        year = {2019},
-        note = {1556-6013}
-    }
-   
-    @InProceedings {civemsa19,
-        author = {A. Genovese and V. Piuri and F. Scotti and S. Vishwakarma},
-        booktitle = {Proc. of the 2019 IEEE Int. Conf. on Computational Intelligence & Virtual Environments for Measurement Systems and 	Applications (CIVEMSA 2019)},
-        title = {Touchless palmprint and finger texture recognition: A Deep Learning fusion approach},
-        address = {Tianjin, China},
-        month = {June},
-        day = {14-16},
-        year = {2019},
-    }
+</div>
 
-Main files:
+---
 
-    - launch_PalmSeg.m: main file
-    - ./params/params_Tongji_Contactless_Palmprint_Dataset.m: parameter file for the Tongji database
-      (http://sse.tongji.edu.cn/linzhang/cr3dpalm/cr3dpalm.htm)
+## 🌟 Overview
 
-Required files:
+**PalmSeg** provides a complete MATLAB pipeline for processing palmprint images acquired in less-constrained or touchless scenarios.
 
-    - ./images/Tongji_Contactless_Palmprint_Dataset/: 
-    Database of images, with filenames in the format "NNNN_SSSS.ext", 
-    where NNNN is the 4-digit individual id, SSSS is the 4-digit sample id, and ext is the extension. 
-    For example: "0001_0001.bmp" is the first sample of the first individual. 
-    In the paper, left and right palms of the same person are considered as different individuals.
+The code extracts the palm shape, detects anatomical landmarks, estimates palm orientation, and crops a normalized palmprint **region of interest (ROI)** that can be used by recognition systems such as **PalmNet**.
 
-Part of the code is based on the papers:
+<div align="center">
 
-    - O. Bingol and M. Ekinci, 
-    “Stereo-based palmprint recognition in various 3D postures,” 
-    Expert Syst. Appl., vol. 78, pp. 74–88, 2017.
-    https://www.sciencedirect.com/science/article/pii/S0957417417300350
-    
-    - K. Ito, T. Sato, S. Aoyama, S. Sakai, S. Yusa, and T. Aoki, 
-    “Palm region extraction for contactless palmprint recognition,” 
-    in Proc. 2015 Int. Conf. on Biometrics (ICB), May 2015, pp. 334–340.
-    https://ieeexplore.ieee.org/abstract/document/7139058
-    
-    - G. K. O. Michael, T. Connie, and A. B. J. Teoh, 
-    “Touch-less palm print biometrics: Novel design and implementation,” 
-    Image Vis. Comput., vol. 26, no. 12, pp. 1551–1560, 2008.
-    https://www.sciencedirect.com/science/article/pii/S0262885608001406
-    
-    - T. Connie, A. B. J. Teoh, M. G. K. Ong, and D. N. C. Ling, 
-    “An automated palmprint recognition system,” 
-    Image Vis Comput., vol. 23, no. 5, pp. 501–515, 2005.
-    https://www.sciencedirect.com/science/article/pii/S0262885605000089
-    
-The databases used in the papers can be obtained at:
+```text
+Input palm image
+       │
+       ▼
+Palm segmentation
+       │
+       ▼
+Valley-point detection
+       │
+       ▼
+Orientation and centroid estimation
+       │
+       ▼
+ROI extraction
+       │
+       ▼
+Normalized palmprint ROI
+```
 
-    - CASIA:
-      http://www.cbsr.ia.ac.cn/english/Palmprint%20Databases.asp
-    - IITD:
-      http://www4.comp.polyu.edu.hk/~csajaykr/IITD/Database_Palm.htm
-    - REST:
-      http://www.regim.org/publications/databases/regim-sfax-tunisian-hand-database2016-rest2016/
-    - Tongji:
-      http://sse.tongji.edu.cn/linzhang/cr3dpalm/cr3dpalm.htm
-	
+</div>
+
+---
+
+## 🧠 What PalmSeg Does
+
+PalmSeg is designed to support palmprint recognition pipelines by producing consistent ROI crops from hand images.
+
+Main processing steps include:
+
+- **Palm and hand segmentation** from the input image
+- **Finger-valley localization** for geometric alignment
+- **Palm center and orientation estimation**
+- **Adaptive ROI extraction** based on hand geometry
+- **Graphic result generation** for visual inspection
+- **Dataset-specific parameter configuration**
+
+---
+
+## 📁 Repository Structure
+
+```text
+PalmSeg/
+│
+├── launch_PalmSeg.m                         # Main MATLAB script
+├── LICENSE                                  # GPL-3.0 license
+├── README.md                                # Project documentation
+│
+├── Functions_Preproc/                       # Pre-processing utilities
+├── Functions_ROI/                           # ROI extraction functions
+├── Functions_Segm/                          # Segmentation functions
+├── params/                                  # Dataset-specific parameter files
+├── util/                                    # General utilities
+│
+└── images/
+    └── Tongji_Contactless_Palmprint_Dataset/ # Example dataset folder structure
+```
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/AngeloUNIMI/PalmSeg.git
+cd PalmSeg
+```
+
+### 2. Prepare the dataset
+
+Place your palmprint images inside the `images/` directory, for example:
+
+```text
+images/Tongji_Contactless_Palmprint_Dataset/
+```
+
+The default script expects bitmap images:
+
+```matlab
+ext = 'bmp';
+dirWorkspace = './images/';
+```
+
+You can modify these values in `launch_PalmSeg.m` if your images use another extension or folder layout.
+
+### 3. Select the dataset configuration
+
+PalmSeg uses dataset-specific parameter files stored in `params/`.
+
+Examples include:
+
+```text
+params/params_CASIA_PalmprintV1.m
+params/params_IITD_Palmprint_V1.m
+params/params_REST_hand_database.m
+params/params_Tongji_Contactless_Palmprint_Dataset.m
+```
+
+The main script loads parameters according to the selected dataset name:
+
+```matlab
+run(['./params/params_' dbname '.m']);
+```
+
+### 4. Run PalmSeg
+
+Open MATLAB in the repository folder and run:
+
+```matlab
+launch_PalmSeg
+```
+
+---
+
+## 📤 Output
+
+For each processed dataset, PalmSeg can generate:
+
+| Output | Description |
+|---|---|
+| `SegInfos/` | Text files containing segmentation and ROI information |
+| `ROIs_possible/` | Extracted candidate palmprint ROI images |
+| `Results/` | Graphic outputs and logs |
+| `*_results_graphic.pdf` | Visual summary of segmentation and ROI extraction results |
+| Log files | Per-run processing information |
+
+Typical output folders are created under:
+
+```text
+images/<dataset_name>/SegInfos/
+images/<dataset_name>/ROIs_possible/
+Results/<dataset_name>/
+```
+
+---
+
+## 🖼️ Visual Output
+
+When graphic output is enabled, PalmSeg produces visual summaries combining segmentation and ROI extraction results.
+
+```text
+Original image  →  Segmented hand shape  →  Detected ROI  →  Saved ROI image
+```
+
+These outputs are useful for quickly verifying whether the segmentation and alignment parameters are appropriate for a specific dataset.
+
+---
+
+## 🧪 Supported Datasets
+
+PalmSeg includes parameter files for multiple palmprint datasets used in the related research works.
+
+| Dataset | Notes |
+|---|---|
+| CASIA Palmprint Database | Contactless palmprint dataset |
+| IITD Palmprint Database | Touchless palmprint images |
+| REST Hand Database | Hand images for biometric analysis |
+| Tongji Contactless Palmprint Dataset | Contactless palmprint images |
+
+Dataset download pages:
+
+- CASIA: http://www.cbsr.ia.ac.cn/english/Palmprint%20Databases.asp
+- IITD: http://www4.comp.polyu.edu.hk/~csajaykr/IITD/Database_Palm.htm
+- REST: http://www.regim.org/publications/databases/regim-sfax-tunisian-hand-database2016-rest2016/
+- Tongji: http://sse.tongji.edu.cn/linzhang/cr3dpalm/cr3dpalm.htm
+
+---
+
+## 🔗 Related Repository
+
+PalmSeg can be used as a pre-processing and ROI extraction stage for:
+
+```text
+PalmNet: Gabor-PCA Convolutional Networks for Touchless Palmprint Recognition
+```
+
+Repository:
+
+```text
+https://github.com/AngeloUNIMI/PalmNet
+```
+
+---
+
+## 📚 Scientific References
+
+If you use this software, please cite the related works.
+
+```bibtex
+@article{genovese2019palmnet,
+  author  = {A. Genovese and V. Piuri and K. N. Plataniotis and F. Scotti},
+  title   = {PalmNet: Gabor-PCA Convolutional Networks for Touchless Palmprint Recognition},
+  journal = {IEEE Transactions on Information Forensics and Security},
+  year    = {2019}
+}
+```
+
+```bibtex
+@inproceedings{genovese2019civemsa,
+  author    = {A. Genovese and V. Piuri and K. N. Plataniotis and F. Scotti},
+  title     = {Touchless Palmprint Recognition},
+  booktitle = {IEEE International Conference on Computational Intelligence and Virtual Environments for Measurement Systems and Applications},
+  year      = {2019}
+}
+```
+
+---
+
+## 👥 Authors
+
+**Angelo Genovese**, **Vincenzo Piuri**, and **Fabio Scotti**  
+Department of Computer Science  
+Università degli Studi di Milano, Italy
+
+**Konstantinos N. Plataniotis**  
+Department of Electrical Engineering  
+University of Toronto, Canada
+
+---
+
+## 📄 License
+
+This project is released under the **GNU General Public License v3.0**.
+
+See the [LICENSE](LICENSE) file for details.
+
+---
+
+<div align="center">
+
+### ✋ PalmSeg
+
+**Palmprint segmentation and ROI extraction for touchless biometric recognition**
+
+</div>
